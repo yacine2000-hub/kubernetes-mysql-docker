@@ -1,0 +1,16 @@
+# Configuration de l'application
+spring:
+  application:
+    name: kubernetes-mysql-docker
+  datasource:
+     password: ${DB_PASSWORD}
+     url: jdbc:mysql://${DB_HOST}/${DB_NAME}?useSSL=false
+     username: ${DB_USERNAME}
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+server:
+  port: 8084
